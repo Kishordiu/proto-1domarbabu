@@ -1,70 +1,37 @@
-# Proto — 1D Omar Babu
+# PROTO / 1D
 
-> **An experimental product prototype and interface workspace.**
+![PROTO / 1D cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=PROTO%20%2F%201D&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=INTERACTION%20EXPERIMENT&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
 
-[![Built with React](https://img.shields.io/badge/React-18-111111?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-111111?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-Frontend-111111?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
+> **INTERACTION EXPERIMENT.**
 
----
+## THE PREMISE
 
-## Overview
+Proto / 1D is a deliberately loose interface laboratory for testing product interactions, visual hierarchy and responsive behaviour without pretending the experiment is already a finished platform.
 
-This repository contains an experimental React/TypeScript prototype. It is structured as a fast iteration space for testing product ideas, interactions, and implementation patterns.
+## THE EXPERIENCE
 
-The repository is maintained by **K. Kishor Kumar** as part of an evolving portfolio of software, AI, IoT and product-engineering experiments.
+**Prototype the feeling.**  \n**Stress the interaction.**  \n**Keep the code easy to reshape.**
 
-## Highlights
+## THE SYSTEM
 
-- Component-driven React architecture
-- Responsive interface foundations
-- Modern utility-first styling
-- Vite development and production tooling
+A component-driven React/TypeScript frontend keeps the experiment lightweight while Vite, Tailwind and reusable UI primitives make iteration fast.
 
-## Technology
+## THE STACK
 
-React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · React Router · Recharts
+React 18 · TypeScript · Vite · Tailwind CSS · React Router · Recharts
 
-## Project Status
+## RUN
+
+```bash
+npm install\nnpm run dev
+```
+
+## PROJECT STATE
 
 **Experimental prototype**
 
-This README intentionally documents the project at the repository level. Implementation details are kept aligned with the codebase as the project evolves.
-
-## Local Development
-
-```bash
-git clone https://github.com/Kishordiu/proto-1d-omar-babu.git
-cd <project-directory>
-npm install
-npm run dev
-```
-
-Production build:
-
-```bash
-npm run build
-npm run preview
-```
-
-Run the test suite when available:
-
-```bash
-npm run test
-```
-
-## Repository Principles
-
-- Keep secrets and local environment files out of source control.
-- Prefer small, reusable components over duplicated UI.
-- Keep documentation synchronized with the implementation.
-- Preserve third-party license notices where required.
-
-## Author
-
-**K. Kishor Kumar**  
-GitHub: [@Kishordiu](https://github.com/Kishordiu)
+The repository documents the capabilities that are actually implemented; future integrations are intentionally separated from the current product surface.
 
 ---
 
-<p align="center">Built with curiosity, iteration, and engineering discipline.</p>
+<p align="center"><strong>K. KISHOR KUMAR</strong><br><sub>ENGINEERING / PRODUCT / SYSTEMS</sub></p>
