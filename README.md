@@ -22,25 +22,22 @@ React 18 · TypeScript · Vite · Tailwind CSS · React Router · Recharts
 
 ## RUN
 
-**Requirements:** Node.js 20+ and npm.
+Requirements: Node.js and npm.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Vite prints the local development URL in the terminal. To build and preview the production bundle:
+Vite prints the local development URL. Quality checks:
 
 ```bash
 npm run build
-npm run preview
+npm run lint
+npm test
 ```
 
-Configured tests can be run with:
-
-```bash
-npm run test
-```
+The repository is an interaction prototype; review the code for the current implementation details.
 
 ## PROJECT STATE
 
