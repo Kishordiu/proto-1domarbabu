@@ -23,6 +23,16 @@ interface RegisterPayload {
   password: string;
 }
 
+function getErrorMessage(error: unknown, fallback: string): string {
+  if (typeof error === "object" && error !== null && "response" in error) {
+    const response = (error as { response?: { data?: { message?: unknown } } }).response;
+    if (typeof response?.data?.message === "string") {
+      return response.data.message;
+    }
+  }
+  return fallback;
+}
+
 const AuthContext = createContext<AuthState | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -63,8 +73,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("tenant_id", data.user.tenantId);
       setUser(data.user);
       navigate("/dashboard");
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Authentication failed");
+    } catch (err: unknown) {
+      setError(getErrorMessage(err, "Authentication failed"));
     } finally {
       setLoading(false);
     }
@@ -80,8 +90,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("tenant_id", data.user.tenantId);
       setUser(data.user);
       navigate("/dashboard");
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Registration failed");
+    } catch (err: unknown) {
+      setError(getErrorMessage(err, "Registration failed"));
     } finally {
       setLoading(false);
     }
@@ -100,8 +110,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setError(null);
     try {
       await api.post("/auth/forgot-password", { email });
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Request failed");
+    } catch (err: unknown) {
+      setError(getErrorMessage(err, "Request failed"));
     } finally {
       setLoading(false);
     }
@@ -113,8 +123,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await api.post("/auth/reset-password", { token, password });
       navigate("/login");
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Reset failed");
+    } catch (err: unknown) {
+      setError(getErrorMessage(err, "Reset failed"));
     } finally {
       setLoading(false);
     }
