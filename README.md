@@ -10,7 +10,9 @@ Proto / 1D is a deliberately loose interface laboratory for testing product inte
 
 ## THE EXPERIENCE
 
-**Prototype the feeling.**  \n**Stress the interaction.**  \n**Keep the code easy to reshape.**
+**Prototype the feeling.**  
+**Stress the interaction.**  
+**Keep the code easy to reshape.**
 
 ## THE SYSTEM
 
