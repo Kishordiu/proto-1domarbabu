@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Cpu, Thermometer, HardDrive, Wifi, Clock } from "lucide-react";
+import { ArrowLeft, Cpu, Thermometer, HardDrive, Wifi, Clock, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useDevice } from "@/hooks/useDevices";
 import { StatusIndicator } from "@/components/StatusIndicator";
 import { CommandButtons } from "@/components/CommandButtons";
 import { Button } from "@/components/ui/button";
 
-function MetricCard({ icon: Icon, label, value, unit, color }: { icon: any; label: string; value?: number; unit: string; color: string }) {
+function MetricCard({ icon: Icon, label, value, unit, color }: { icon: LucideIcon; label: string; value?: number; unit: string; color: string }) {
   return (
     <div className="glass-panel p-4">
       <div className="flex items-center gap-2 mb-2">
