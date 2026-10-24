@@ -1,5 +1,7 @@
 ![PROTO / 1D — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
+# PROTO / 1D
+
 > **INTERACTION EXPERIMENT.**
 
 ## THE PREMISE
