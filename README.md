@@ -2,51 +2,64 @@
 
 # PROTO / 1D
 
-> **INTERACTION EXPERIMENT.**
+**An API-driven device-operations interface for fleet overview, status review, and operator commands.**
 
-## THE PREMISE
+Proto / 1D is a React/TypeScript frontend organised around a dashboard and device-detail workflow. The dashboard requests summary statistics, charts, device records, and activity from an API through `src/lib/api.ts` and `src/hooks/useDevices.ts`. The client can attach bearer and tenant headers from browser storage and expects backend routes for device lists, detail, statistics, commands, and token refresh.
 
-Proto / 1D is a deliberately loose interface laboratory for testing product interactions, visual hierarchy and responsive behaviour without pretending the experiment is already a finished platform.
+## Request path
 
-## THE EXPERIENCE
-
-**Prototype the feeling.**  
-**Stress the interaction.**  
-**Keep the code easy to reshape.**
-
-## THE SYSTEM
-
-A component-driven React/TypeScript frontend keeps the experiment lightweight while Vite, Tailwind and reusable UI primitives make iteration fast.
-
-## THE STACK
-
-React 18 · TypeScript · Vite · Tailwind CSS · React Router · Recharts
-
-## RUN
-
-Requirements: Node.js and npm.
-
-```bash
-npm ci
-npm run dev
+```text
+Protected dashboard / device page
+             │
+             ▼
+React Query hooks
+             │
+             ▼
+Axios API client (VITE_API_URL or /api)
+             │
+             ├──► Device inventory and detail
+             ├──► Dashboard statistics
+             └──► Device command endpoint
+                       │
+                       ▼
+             Backend + device integration
 ```
 
-Vite prints the local development URL. Quality checks:
+## What is in this repository
+
+- **Dashboard:** Summary cards, chart panels, device table, and activity feed.
+- **Device detail:** A route for inspecting one device and presenting available actions.
+- **Operator interface:** Sidebar, navigation, notifications, and command controls.
+- **Account screens:** Login, registration, password reset, and protected dashboard routes.
+- **API boundary:** Query/mutation hooks talk to an expected backend rather than embedding an assumed device service in the UI.
+
+## Stack
+
+React · TypeScript · Vite · React Router · TanStack Query · Axios · Framer Motion · Recharts
+
+## Run locally
+
+**Requirements:** Node.js and npm.
 
 ```bash
-npm run build
+git clone https://github.com/Kishordiu/proto-1domarbabu.git
+cd proto-1domarbabu
+npm ci
+```
+
+Set `VITE_API_URL` to the backend base URL in a local `.env` file when the API is hosted separately. Without a matching API, dashboard queries and commands will not return operational data.
+
+```bash
+npm run dev
 npm run lint
 npm test
+npm run build
 ```
 
-The repository is an interaction prototype; review the code for the current implementation details.
+## API and security boundary
 
-## PROJECT STATE
-
-**Experimental prototype**
-
-The repository documents the capabilities that are actually implemented; future integrations are intentionally separated from the current product surface.
+This repository is the frontend. Sending a command request from the browser is not evidence that a physical device performed it. The backend must validate the token, user role, tenant boundary, target-device permission, command type, and replay/idempotency behaviour. Do not rely on localStorage-stored tokens or a client-supplied tenant header as a security boundary without server-side validation.
 
 ---
 
-<p align="center"><strong>K. KISHOR KUMAR</strong><br><sub>ENGINEERING / PRODUCT / SYSTEMS</sub></p>
+<p align="center"><sub>DIU FOUNDRY · DEVICE OPERATIONS / INTERFACE PROTOTYPING</sub></p>
