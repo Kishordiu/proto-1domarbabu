@@ -1,6 +1,4 @@
-# PROTO / 1D
-
-![PROTO / 1D cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=PROTO%20%2F%201D&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=INTERACTION%20EXPERIMENT&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
+![PROTO / 1D — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
 > **INTERACTION EXPERIMENT.**
 
